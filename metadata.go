@@ -87,8 +87,9 @@ const (
 
 )
 
+// Metadata - The event metadata section for UDM events stores general information about each event.
 type Metadata struct {
-	EventType          string    `json:"event_type"`                    //Specifies the primary type of the event
+	EventType          string    `json:"event_type"`                    // Specifies the primary type of the event
 	CollectedTimestamp time.Time `json:"collected_timestamp,omitempty"` // Collection time of the event RFC 3339
 	EventTimestamp     time.Time `json:"event_timestamp"`               // Event generation time RFC 3339
 	Description        string    `json:"description,omitempty"`         // Human-readable description of the event 1024-byte max
