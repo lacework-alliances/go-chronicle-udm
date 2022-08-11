@@ -11,7 +11,7 @@ const (
 // Noun - In this section, the word Noun is a overarching term used to represent the entities; principal, src, target,
 // intermediary, observer, and about. These entities have common attributes, but represent different objects in an event.
 type Noun struct {
-	AssetID              string    `json:"assetid,omitempty"`              // Vendor-specific unique device identifier. Lacework.PolygraphDataPlatform.<ASSET>
+	AssetID              string    `json:"asset_id,omitempty"`             // Vendor-specific unique device identifier. Lacework.PolygraphDataPlatform.<ASSET>
 	Email                string    `json:"email,omitempty"`                // email address
 	File                 *File     `json:"file,omitempty"`                 // file metadata
 	Hostname             string    `json:"hostname,omitempty"`             // Client hostname or domain name field. Do not include if a URL is present. RFC 1123
