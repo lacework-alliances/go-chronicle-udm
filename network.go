@@ -31,12 +31,12 @@ const (
 )
 
 type Network struct {
-	ApplicationProtocol string `json:"application_protocol,omitempty"` // Enumerated
-	Direction           string `json:"direction,omitempty"`            // Enumerated
+	ApplicationProtocol string `json:"applicationProtocol,omitempty"` // Enumerated
+	Direction           string `json:"direction,omitempty"`           // Enumerated
 	Email               string `json:"email,omitempty"`
-	IPProtocol          string `json:"ip_protocol,omitempty"`      // Enumerated
-	ReceivedBytes       int64  `json:"received_bytes,omitempty"`   // 64-bit unsigned integer
-	SentBytes           int64  `json:"sent_bytes,omitempty"`       // 64-bit unsigned integer
-	SessionDuration     int64  `json:"session_duration,omitempty"` // Stores the network session duration. Choosing nanoseconds (int64)
-	SessionID           string `json:"session_id,omitempty"`
+	IPProtocol          string `json:"ipProtocol,omitempty"`      // Enumerated
+	ReceivedBytes       int64  `json:"receivedBytes,omitempty"`   // 64-bit unsigned integer
+	SentBytes           int64  `json:"sentBytes,omitempty"`       // 64-bit unsigned integer
+	SessionDuration     int64  `json:"sessionDuration,omitempty"` // Stores the network session duration. Choosing nanoseconds (int64)
+	SessionID           string `json:"sessionid,omitempty"`
 }

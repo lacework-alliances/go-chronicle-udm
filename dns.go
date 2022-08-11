@@ -22,10 +22,10 @@ type Question struct {
 }
 
 type ResourceRecord struct {
-	BinaryData []byte `json:"binary_data,omitempty"` // Stores the raw bytes of any non-UTF8 strings that might be included as part of a DNS response. This field must only be used if the response data returned by the DNS server contains non-UTF8 data. Otherwise, place the DNS response in the data field below. This type of information must be stored here rather than in ResourceRecord.data.
-	Class      int32  `json:"class,omitempty"`       // resource record class
-	Data       string `json:"data,omitempty"`        // Stores the payload or response to the DNS question for all responses encoded in UTF-8 format. For example, the data field could return the IP address of the machine that the domain name refers to. If the resource record is for a different type or class, it might contain another domain name (when one domain name is redirected to another domain name). Data must be stored just as it is in the DNS response.
-	Name       string `json:"name,omitempty"`        // resource record owner name
-	Ttl        int32  `json:"ttl,omitempty"`         // Stores the time interval for which the resource record can be cached before the source of the information should again be queried.
-	Type       int32  `json:"type,omitempty"`        // stores the resource record type
+	BinaryData []byte `json:"binaryData,omitempty"` // Stores the raw bytes of any non-UTF8 strings that might be included as part of a DNS response. This field must only be used if the response data returned by the DNS server contains non-UTF8 data. Otherwise, place the DNS response in the data field below. This type of information must be stored here rather than in ResourceRecord.data.
+	Class      int32  `json:"class,omitempty"`      // resource record class
+	Data       string `json:"data,omitempty"`       // Stores the payload or response to the DNS question for all responses encoded in UTF-8 format. For example, the data field could return the IP address of the machine that the domain name refers to. If the resource record is for a different type or class, it might contain another domain name (when one domain name is redirected to another domain name). Data must be stored just as it is in the DNS response.
+	Name       string `json:"name,omitempty"`       // resource record owner name
+	Ttl        int32  `json:"ttl,omitempty"`        // Stores the time interval for which the resource record can be cached before the source of the information should again be queried.
+	Type       int32  `json:"type,omitempty"`       // stores the resource record type
 }

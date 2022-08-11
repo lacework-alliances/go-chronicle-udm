@@ -21,19 +21,19 @@ const (
 )
 
 type Dhcp struct {
-	ClientHostname   string `json:"client_hostname,omitempty"`
-	ClientIdentifier []byte `json:"client_identifier,omitempty"`
+	ClientHostname   string `json:"clientHostname,omitempty"`
+	ClientIdentifier []byte `json:"clientIdentifier,omitempty"`
 	File             string `json:"file,omitempty"` // file name for the boot image
 	Flags            int32  `json:"flags,omitempty"`
 	Hlen             int32  `json:"hlen,omitempty"`  // hardware address length
 	Hops             int32  `json:"hops,omitempty"`  // HDCP hop count
 	HType            int32  `json:"htype,omitempty"` // hardware address type
-	LeaseTimeSeconds int32  `json:"lease_time_seconds,omitempty"`
-	OpCode           string `json:"opcode,omitempty"`            // Enumerated
-	RequestedAddress string `json:"requested_address,omitempty"` // valid ipv4 or ipv6 address encoded in ASCII
-	Seconds          int32  `json:"seconds,omitempty"`           // seconds elapses since the client began the acquisition/renewal process
-	SName            string `json:"sname,omitempty"`             // name of the server with the client requested boot from
-	TransactionID    int32  `json:"transaction_id"`
+	LeaseTimeSeconds int32  `json:"leaseTimeSeconds,omitempty"`
+	OpCode           string `json:"opcode,omitempty"`           // Enumerated
+	RequestedAddress string `json:"requestedAddress,omitempty"` // valid ipv4 or ipv6 address encoded in ASCII
+	Seconds          int32  `json:"seconds,omitempty"`          // seconds elapses since the client began the acquisition/renewal process
+	SName            string `json:"sname,omitempty"`            // name of the server with the client requested boot from
+	TransactionID    int32  `json:"transactionid"`
 	Type             string `json:"type,omitempty"`   // Enumerated
 	ChAddr           string `json:"chaddr,omitempty"` // ip address for client hardware. valid ipv4 or ipv6 address
 	CiAddr           string `json:"ciaddr,omitempty"` // ip address for the client
