@@ -1,5 +1,7 @@
 package udm
 
+import "time"
+
 const (
 	// EVENT TYPES
 
@@ -87,14 +89,14 @@ const (
 
 // Metadata - The event metadata section for UDM events stores general information about each event.
 type Metadata struct {
-	EventType          string `json:"event_type"`                    // Specifies the primary type of the event
-	CollectedTimestamp string `json:"collected_timestamp,omitempty"` // Collection time of the event RFC 3339
-	EventTimestamp     string `json:"event_timestamp"`               // Event generation time RFC 3339
-	Description        string `json:"description,omitempty"`         // Human-readable description of the event 1024-byte max
-	ProductEventType   string `json:"product_event_type,omitempty"`  // Short, descriptive, human-readable, and product-specific event name or type. 64-byte max
-	ProductLogID       string `json:"product_logid,omitempty"`       // Encodes a vendor-specific event identifier to uniquely identify the event (a GUID). case-sensitive 256-byte max
-	ProductName        string `json:"product_name,omitempty"`        // Specifies the name of the product. 256-byte max
-	ProductVersion     string `json:"product_version,omitempty"`     // Specifies the version of the product. 32-byte max
-	URLBackToProduct   string `json:"url_back_to_product,omitempty"` // URL linking to a relevant website where you can view more information - Valid RFC 3986 URL
-	VendorName         string `json:"vendor_name,omitempty"`         // Specifies the product vendor's name - 256-byte max
+	EventType          string    `json:"event_type"`                    // Specifies the primary type of the event
+	CollectedTimestamp time.Time `json:"collected_timestamp,omitempty"` // Collection time of the event RFC 3339
+	EventTimestamp     time.Time `json:"event_timestamp"`               // Event generation time RFC 3339
+	Description        string    `json:"description,omitempty"`         // Human-readable description of the event 1024-byte max
+	ProductEventType   string    `json:"product_event_type,omitempty"`  // Short, descriptive, human-readable, and product-specific event name or type. 64-byte max
+	ProductLogID       string    `json:"product_logid,omitempty"`       // Encodes a vendor-specific event identifier to uniquely identify the event (a GUID). case-sensitive 256-byte max
+	ProductName        string    `json:"product_name,omitempty"`        // Specifies the name of the product. 256-byte max
+	ProductVersion     string    `json:"product_version,omitempty"`     // Specifies the version of the product. 32-byte max
+	URLBackToProduct   string    `json:"url_back_to_product,omitempty"` // URL linking to a relevant website where you can view more information - Valid RFC 3986 URL
+	VendorName         string    `json:"vendor_name,omitempty"`         // Specifies the product vendor's name - 256-byte max
 }
