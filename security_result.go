@@ -49,17 +49,17 @@ const (
 
 // SecurityResult metadata
 type SecurityResult struct {
-	About             string `json:"about,omitempty"`             // String description
-	Action            string `json:"action,omitempty"`            // Enumerated
-	ActionDetails     string `json:"actionDetails,omitempty"`     // Vendor-provided details of the action taken as a result of the security incident. Examples: drop, block, decrypt, encrypt
-	Category          string `json:"category,omitempty"`          // Enumerated
-	Confidence        string `json:"confidence,omitempty"`        // Enumerated
-	ConfidenceDetails string `json:"confidenceDetails,omitempty"` // Additional detail with regards to the confidence of a security event as estimated by the product vendor.
-	Priority          string `json:"priority,omitempty"`          // Enumerated
-	RuleID            string `json:"ruleid,omitempty"`
-	RuleName          string `json:"ruleName,omitempty"`
-	Severity          string `json:"severity,omitempty"`        // Enumerated
-	SeverityDetails   string `json:"severityDetails,omitempty"` // Severity for a security event as estimated by the product vendor.
-	ThreatName        string `json:"threatName,omitempty"`
-	URLBackToProduct  string `json:"URLBackToProduct,omitempty"`
+	About             string   `json:"about,omitempty"`             // String description
+	Action            []string `json:"action,omitempty"`            // Enumerated
+	ActionDetails     string   `json:"actionDetails,omitempty"`     // Vendor-provided details of the action taken as a result of the security incident. Examples: drop, block, decrypt, encrypt
+	Category          string   `json:"category,omitempty"`          // Enumerated
+	Confidence        string   `json:"confidence,omitempty"`        // Enumerated
+	ConfidenceDetails string   `json:"confidenceDetails,omitempty"` // Additional detail with regards to the confidence of a security event as estimated by the product vendor.
+	Priority          string   `json:"priority,omitempty"`          // Enumerated
+	RuleID            string   `json:"ruleid,omitempty"`
+	RuleName          string   `json:"ruleName,omitempty"`
+	Severity          string   `json:"severity,omitempty"`        // Enumerated
+	SeverityDetails   string   `json:"severityDetails,omitempty"` // Severity for a security event as estimated by the product vendor.
+	ThreatName        string   `json:"threatName,omitempty"`
+	URLBackToProduct  string   `json:"URLBackToProduct,omitempty"`
 }
