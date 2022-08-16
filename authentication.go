@@ -36,7 +36,7 @@ const (
 )
 
 type Authentication struct {
-	AuthType             string `json:"auth_type,omitempty"`             // Type of system an authentication event is associated. Enumerated
-	AuthenticationStatus string `json:"authentication_status,omitempty"` // Status of user or credential. Enumerated
-	Mechanism            string `json:"mechanism,omitempty"`             // Enumerated
+	AuthType             string `json:"type,omitempty"`      // Type of system an authentication event is associated. Enumerated
+	AuthenticationStatus string `json:"status,omitempty"`    // Status of user or credential. Enumerated
+	Mechanism            string `json:"mechanism,omitempty"` // Enumerated
 }
