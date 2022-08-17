@@ -12,6 +12,10 @@ func UserLoginLogout(udm *UDM) (bool, []string) {
 	var message []string
 	var failed bool
 	// validate principal.hostname and target.hostname exist
+	if udm.Principal == nil || udm.Target == nil {
+		message = append(message, "Principal and/or Target are missing")
+		failed = true
+	}
 	if udm.Principal.Hostname == "" || udm.Target.Hostname == "" {
 		message = append(message, "Principal and/or Target are missing the required hostname field")
 		failed = true
