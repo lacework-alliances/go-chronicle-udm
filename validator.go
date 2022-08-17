@@ -20,10 +20,12 @@ func UserLoginLogout(udm *UDM) (bool, []string) {
 		failed = true
 	}
 	// validate extension.auth.type and extension.auth.mechanism
-	if !stringInSlice(udm.Extensions.Auth.AuthType, AuthTypes) {
+	if udm.Extensions == nil {
+		message = append(message, "Authentication Extension is missing")
+		failed = true
+	} else if !stringInSlice(udm.Extensions.Auth.AuthType, AuthTypes) {
 		udm.Extensions.Auth.AuthType = AUTHTYPE_UNSPECIFIED
-	}
-	if len(udm.Extensions.Auth.Mechanism) == 0 {
+	} else if len(udm.Extensions.Auth.Mechanism) == 0 {
 		udm.Extensions.Auth.Mechanism = []string{MECHANISM_UNSPECIFIED}
 	}
 	return failed, message
