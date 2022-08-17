@@ -8,7 +8,7 @@ var MechanismTypes = []string{BADGE_READER, BATCH, CACHED_INTERACTIVE, HARDWARE_
 // Required Fields Link: https://cloud.google.com/chronicle/docs/unified-data-model/udm-usage#user_login
 // Must have principal.hostname and target.hostname
 // Must have extension.auth.type and extension.auth.mechanism
-func UserLoginLogout(udm *UDM) bool {
+func UserLoginLogout(udm *UDM) (bool, []string) {
 	var message []string
 	var failed bool
 	// validate principal.hostname and target.hostname exist
@@ -23,5 +23,5 @@ func UserLoginLogout(udm *UDM) bool {
 	if len(udm.Extensions.Auth.Mechanism) == 0 {
 		udm.Extensions.Auth.Mechanism = []string{MECHANISM_UNSPECIFIED}
 	}
-	return failed
+	return failed, message
 }
