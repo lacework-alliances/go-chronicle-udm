@@ -91,8 +91,8 @@ const (
 type Metadata struct {
 	CollectedTimestamp *time.Time `json:"collected_timestamp,omitempty"` // Collection time of the event RFC 3339
 	Description        string     `json:"description,omitempty"`         // Human-readable description of the event 1024-byte max
-	EventTimestamp     *time.Time `json:"eventTimestamp"`                // Event generation time RFC 3339
-	EventType          string     `json:"eventType"`                     // Specifies the primary type of the event
+	EventTimestamp     *time.Time `json:"event_timestamp"`               // Event generation time RFC 3339
+	EventType          string     `json:"event_type"`                    // Specifies the primary type of the event
 	ID                 []byte     `json:"id,omitempty"`
 	IngestedTimestamp  *time.Time `json:"ingested_timestamp,omitempty"`
 	IngestionLabels    *Label     `json:"ingestion_labels,omitempty"`
