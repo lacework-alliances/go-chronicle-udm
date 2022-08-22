@@ -30,4 +30,5 @@ type Resource struct {
 	ProductObjectId string     `json:"product_object_id,omitempty"`
 	ResourceSubtype string     `json:"resource_subtype,omitempty"`
 	ResourceType    string     `json:"resource_type,omitempty"` // Enumerated constant
+	Type            string     `json:"type,omitempty"`          // Enumerated and Depreciated
 }
