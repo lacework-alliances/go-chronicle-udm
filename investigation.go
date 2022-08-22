@@ -37,5 +37,5 @@ type Investigation struct {
 	RootCause     string   `json:"root_cause,omitempty"`
 	SeverityScore uint32   `json:"severity_score,omitempty"`
 	Status        string   `json:"status,omitempty"`
-	Verdict       string   `json:"verdict"`
+	Verdict       string   `json:"verdict,omitempty"`
 }

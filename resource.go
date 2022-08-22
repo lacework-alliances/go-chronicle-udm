@@ -24,10 +24,10 @@ const (
 )
 
 type Resource struct {
-	Attribute       Attribute `json:"attribute,omitempty"`
-	Name            string    `json:"name,omitempty"`
-	Parent          string    `json:"parent,omitempty"`
-	ProductObjectId string    `json:"product_object_id,omitempty"`
-	ResourceSubtype string    `json:"resource_subtype,omitempty"`
-	ResourceType    string    `json:"resource_type,omitempty"` // Enumerated constant
+	Attribute       *Attribute `json:"attribute,omitempty"`
+	Name            string     `json:"name,omitempty"`
+	Parent          string     `json:"parent,omitempty"`
+	ProductObjectId string     `json:"product_object_id,omitempty"`
+	ResourceSubtype string     `json:"resource_subtype,omitempty"`
+	ResourceType    string     `json:"resource_type,omitempty"` // Enumerated constant
 }
