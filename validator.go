@@ -30,3 +30,14 @@ func UserLoginLogout(udm *UDM) (bool, []string) {
 	}
 	return failed, message
 }
+
+// UserResource returns the minimum required fields for the following event types
+// USER_RESOURCE_ACCESS, USER_RESOURCE_CREATION, USER_RESOURCE_DELETION, USER_RESOURCE_UPDATE_CONTENT
+// USER_RESOURCE_UPDATE_PERMISSIONS, USER_UNCATEGORIZED
+// returns two Noun structs, principal and target
+func UserResource(principalUser string, targetResource string) (Noun, Noun) {
+	var principal, target Noun
+	principal.User = &User{UserID: principalUser}
+	target.Resource = &Resource{Name: targetResource}
+	return principal, target
+}
