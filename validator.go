@@ -41,3 +41,14 @@ func UserResource(principalUser string, targetResource string) (Noun, Noun) {
 	target.Resource = &Resource{Name: targetResource}
 	return principal, target
 }
+
+// Setting returns the minimum required fields for the following event types
+// SETTING_UNCATEGORIZED, SETTING_CREATION, SETTING_MODIFICATION, SETTING_DELETION
+// https://cloud.google.com/chronicle/docs/unified-data-model/udm-usage#setting_
+// returns two Noun structs principal and target
+func Setting(principalHostname string, targetResource string) (Noun, Noun) {
+	var principal, target Noun
+	principal.Hostname = principalHostname
+	target.Resource = &Resource{Type: SETTING, Name: targetResource}
+	return principal, target
+}
